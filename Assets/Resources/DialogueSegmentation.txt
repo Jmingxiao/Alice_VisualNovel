@@ -1,0 +1,11 @@
+Alice as ??? "You hear that? The song... it's about me!" Play("aabbccdd")
+
+White Rabbit as ??? "You're no celebrity. Don't get ahead of yourself." Play("aabbccdd"), setMood(chill)
+
+Alice  at 0.5:0.5 as the girl "But it's singing, \" In her presence, there is no 'wonder' \"..." Play("aabbccdd")
+
+"Alice said sth again" Play("aabbccdd")
+
+AAA as ??? [0:Angle1, 1:happy] at 0 "hello world" Play("aabbccdd")
+
+narrator "something speaked by the narratorP{a}, something really really{a} long long long long and{a} I dont know what i am typinh I am just typing sthing really random "  Play("aabbccdd")

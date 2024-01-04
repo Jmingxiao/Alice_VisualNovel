@@ -7,11 +7,11 @@ namespace DIALOGUE
 {
 public class DialogueParser 
 {
-    private const string commandRegexPattern = "\\w*[^\\s]\\(";
+    private const string commandRegexPattern = @"\w*[^\s]\(";
     public static DIALOGUELINE Parse(string rawLine){
-        Debug.Log($"Parsing Line:- '{rawLine}'");
+       // Debug.Log($"Parsing Line:- '{rawLine}'");
         (string speaker, string dialogue, string commands) = RipContent(rawLine);
-        Debug.Log($"Speaker = '{speaker}'\nDialogue = '{dialogue}'\nCommands = '{commands}'");
+        //Debug.Log($"Speaker = '{speaker}'\nDialogue = '{dialogue}'\nCommands = '{commands}'");
         return new DIALOGUELINE(speaker,dialogue,commands);
     }
 
@@ -39,7 +39,7 @@ public class DialogueParser
                 isEscaped = false;
             }
         }
-        Debug.Log(rawLine.Substring(dialogueStart+1,dialogueEnd-dialogueStart-1));
+        //Debug.Log(rawLine.Substring(dialogueStart+1,dialogueEnd-dialogueStart-1));
 
         //Indentify Command Pattern
         Regex commandRegex = new Regex(commandRegexPattern);

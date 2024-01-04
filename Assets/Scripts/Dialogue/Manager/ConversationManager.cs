@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -53,22 +54,50 @@ public class ConversationManager
     IEnumerator Line_RunDialogue(DIALOGUELINE line){
         //show or hide speaker name if there is one present
         if(line.hasSpeaker)
-            dialogueSystem.ShowSpeakeName(line.speaker);
-        else
-            dialogueSystem.HideSpeakerName();
+            dialogueSystem.ShowSpeakeName(line.speakerData.displayName);
 
-        yield return BuildDialogue(line.dialogue);
+        yield return BuildLineSegments(line.dialogueData);
         // wait for user input
         yield return WaitForUserInput();
     }
 
     IEnumerator Line_RunCommands(DIALOGUELINE line){
-        Debug.Log(line.commands);
+        Debug.Log(line.commandData);
         yield return null;
     }
-    IEnumerator BuildDialogue(string dialogue){
-        architects.Build(dialogue);
 
+    IEnumerator BuildLineSegments(DL_DIALOGUE_DATA line){
+        for(int i = 0; i < line.segments.Count; i++){
+            DL_DIALOGUE_DATA.DIALOGUE_SEGMENT segment = line.segments[i];
+
+            yield return WaitForDialogueSegementSignalToBeTriggered(segment);
+            yield return BuildDialogue(segment.dialogue,segment.appendText);
+        }
+    }
+
+    IEnumerator WaitForDialogueSegementSignalToBeTriggered(DL_DIALOGUE_DATA.DIALOGUE_SEGMENT segment){
+        switch(segment.startSignal){
+            case DL_DIALOGUE_DATA.DIALOGUE_SEGMENT.StartSignal.C:
+            case DL_DIALOGUE_DATA.DIALOGUE_SEGMENT.StartSignal.A:
+                yield return WaitForUserInput();
+                break;
+            case DL_DIALOGUE_DATA.DIALOGUE_SEGMENT.StartSignal.WC:
+            case DL_DIALOGUE_DATA.DIALOGUE_SEGMENT.StartSignal.WA:
+                yield return new WaitForSeconds(segment.signalDelay);
+                break;
+            default:
+                break;
+        }
+    }
+
+    IEnumerator BuildDialogue(string dialogue,bool append = false){
+        //build the dialogue
+        if(!append)
+            architects.Build(dialogue);
+        else
+            architects.Append(dialogue);
+
+        //wait for the dialogue to finish building
         while(architects.isBuilding)
         {
             if(userPromt){
