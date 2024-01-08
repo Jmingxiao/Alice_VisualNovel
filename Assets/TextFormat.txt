@@ -1,5 +1,0 @@
-Dialogue line format 
-
-{n{as cn}{at x{:y}}{ [l:e{+1:e}] "d"} {c(a), c(a)}}
-
-speaker "Dialogue" Command(arguments)
