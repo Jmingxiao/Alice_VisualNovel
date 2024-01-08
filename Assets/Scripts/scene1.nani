@@ -22,7 +22,128 @@ They encountered the poker soldiers who was singing while burning books, an orde
 Alice: Emmm…What are they doing now?
 Just as they sing in their song, the Queen of Hearts is all-knowing and all-powerful, so there is absolutely no wonder in this world that she cannot resolve. In order to smoothly implement her authoritarian policies, the Queen does not allow any doubts to exist among the people. 
 Therefore, she decides to eliminate all wonders, starting with the elimination of detective and mystery novels. Even the painstakingly crafted Situation puzzle that I wrote has been burned.
+@char Alice.sad  pos:15,-6 scale:0.8,0.8,0.8 look:Right
 Alice: What? Why?
 Alice: ...(thinking) Even though the Queen of Hearts and I both often talk about 'eliminating wonders,' our approaches are diametrically opposed. I face problems and seek solutions bravely, while the Queen of Hearts, in order to maintain her position, resorts to stifling problems rather than solving them.
+@char Alice.angry  pos:15,-6 scale:0.8,0.8,0.8 look:Right
+Alice: ...(angry step forward)
+@hide WR
+@char Alice.confuse
+@char Club4 scale:1.8,1.8,1.8
+Club4: Do you want to die?
+Alice: So what? I'm not afraid of anything.
+Club4: Opposing us is equivalent to opposing Her Majesty the Queen. You know?
+Alice: Who cares?
+Club4: I think you don't want to live anymore (draw the sword, closing in)
+Alice step back
+@hide Club4
+;change scene to alley
+Just then, someone bumped into Alice from the side. She was bumped flying into the air, and then feeling herself being lifted by someone.
+
+Alice felt herself being carried away by someone into an alley. After a bumpy ride...
+@char Anony 
+Anony: Phew, it should be safe here.
+@char Alice.angry  pos:15,-6 scale:0.8,0.8,0.8 look:Right
+Alice: It's painful! Let me down!
+Alice looked up and saw a pair of long ears vaguely.
+@char Alice.confuse  pos:15,-6 scale:0.8,0.8,0.8 look:Right
+Alice: Are you... the White Rabbit?
+@hide Anony
+@char March.serious pose:norm look:Left
+March: What White Rabbit? Don't compare me to that uppity fellow. My fur is a wild shade of brown, unlike his delicate white. We're like rabbits and rabbit droppings, no comparison at all!
+Alice: ...(thinking) But isn't brown more like droppings?
+March: Well... it does seem that way…… You're quite observant. No wonder you claim to be a detective.
+Alice: Let's not dwell on that. Anyway, thank you.
+@char March.smile pose:norm look:Left
+March: You're welcome. It's just a little appetizer for breakfast... oh, no, for fika. Assisting comrades who love wonders is an obligation, after all!
+Alice: comrades who love wonders?
+@char March.normal pose:norm look:Left
+March: Oh no... busted... Well, no harm in telling you. You actually fit the criteria for joining the club.
+Alice: Club?
+@char March.smile pose:norm look:Left
+March: Yes, the club! How about having a fika together now?
+Alice: What's the connection between wonders and fika?
+March: You might find the wonders you're looking for there.
+Alice: ...(thinking) 
+@char Alice.smile  pos:15,-6 scale:0.8,0.8,0.8 look:Right
+Alice: Alright, then I'll go take a look.
+March: That's the spirit! Let's go!
+
+@char Alice.angry  pos:15,-6 scale:0.8,0.8,0.8 look:Right
+Alice: Hey, wait... wait for me... Where are you taking me anyway?
+March: Hurry up, we're almost there!
+After entering through the back door of a building, we walked down a corridor for a while, then passed through the inside of a counter and entered a small room.
+;add a opendoor sound effect and change background
+@char March.serious 
+March: This is it. To avoid being discovered by the playing card soldiers, be aware that there are mechanisms here.
+;端茶interaction
+The inner wall of the fireplace suddenly part to the sides, like an elevator door.
+March: What are you waiting for? Hurry up! This door will automatically close in thirty seconds.
+;background alley again
+@char Alice.confuse  pos:15,-6 scale:0.8,0.8,0.8 look:Right
+Alice: I've been pondering that question, 'Why is a raven like a writing desk?' Do you have any idea?
+March: No, it's not something my brain can come up with.
+Alice: Yeah, I can't believe I'm asking you. I must be a fool.
+March: Well, you've already known that I don't have any answers, haven't you? Quite the detective move! But why are you the foolish one?
+Alice: ......
+
+Alice and the March Hare continued walking in the alley when suddenly they heard two familiar voices coming from around the corner. 
+They stealthily approached.
+@char March pose:ls look:Right
+@char Emerald pose:norm scale:1.2,1.2,1.2
+@char Violet  pose:norm scale:0.7,0.7,0.7
+Emerald: Have you thought about the matter we discussed earlier?
+Violet: Hmm... but I still...
+Emerald: Still going to choose that pretentious guy with the glasses?
+Violet: Shut up! You can't talk about Ash like that!
+Violet stormed off angrily after saying these words.
+Emerald: (sigh) Damn it, what should I do to catch her attention?
+@char March.smile 
+March: Wow, a love triangle!
+@char Alice.angry  pos:15,-6 scale:0.8,0.8,0.8 look:Right
+Alice: Shh, be careful not to be overheard. Let's leave.
+@hide Emerald 
+@hide Violet
+;change to alley background
+@char March pose:norm look:Left
+Alice and the March Hare navigated through the alley when they suddenly encountered the playing card soldiers coming to capture them.
+Clube5: Found them! They are here!
+Clube6: CATCH THEM!!
+@save
+#HideInteract
+;Near the bunker change background
+;hide club5 club6 
+@choice "LeftBox" goto:.NoCaught
+@choice "RightBox" goto:.Caught
+@choice "MiddleBox" goto:.Caught
 @stop
- 
+
+#Caught
+;show a background being Caught
+@goto .HideInteract
+
+#NoCaught
+March: Oh my god, they are so close... Anyway, we are safe now...
+@back str2 
+Alice: Where do we go next?
+March: Hmm... let's see... Huh? Wait a minute... Where's my pocket watch?!
+Alice: What happened?
+March: My pocket watch... it seems I left it at the club... Alice, I need to go retrieve my pocket watch.
+Alice: It's too dangerous to go back!
+March: You don't understand the importance of this pocket watch to me at all! Without it, I'll be restless day and night!
+Alice: Okay
+; room background 把手血迹
+Alice: Emm?
+March: What's wrong?
+Alice: There are red stains on both of the cups... I have a bad feeling about this.
+Just then, the wall on the inside of the fireplace opened. Alice and the March Hare smelled a strong scent of blood.
+
+;In the secret room 风帽的尸体
+Alice: ... He's already dead.
+March: Now, what should we do?
+Alice: We can't call the poke soldier... In that case, we have to find the murderer ourselves...
+Alice: The fact that the murderer knows about this secret room means they must be a member of this club. The March Hare and I have been together since the tea club ended, so the murderer can only be one of the remaining three people: Ash, Violet, or Emerald.
+
+
+@stop
+  

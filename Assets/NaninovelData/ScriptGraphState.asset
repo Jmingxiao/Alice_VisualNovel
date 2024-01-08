@@ -16,14 +16,14 @@ MonoBehaviour:
   - scriptName: scene1
     position:
       serializedVersion: 2
-      x: -118.666664
-      y: 74.666664
-      width: 87.33333
-      height: 78.66667
+      x: -176.66667
+      y: 54
+      width: 116.66667
+      height: 102.666664
   - scriptName: scene2
     position:
       serializedVersion: 2
-      x: 0
-      y: 78.666664
+      x: -25.333334
+      y: 78
       width: 88.666664
-      height: 78.66667
+      height: 78.666664

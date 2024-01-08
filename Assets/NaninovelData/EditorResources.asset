@@ -168,7 +168,7 @@ MonoBehaviour:
       guid: dd85ce99288c2f8488447fa511b1c0d6
   - Id: Scripts
     Resources:
-    - name: test
+    - name: scene1
       pathPrefix: Scripts
       guid: 9113a57bf624a1243b89c90603f34b21
     - name: scene2
@@ -189,11 +189,61 @@ MonoBehaviour:
       guid: fb7b66e10784c6a4294808e8f655be07
   - Id: Characters/fff787f2-f9ba-4489-bb8c-cadd68faa60d
     Resources:
-    - name: Alice
+    - name: confuse
       pathPrefix: Characters/Alice
-      guid: 26fc8bf406cbbb8468328fd6f096e415
+      guid: 6c576342d4eade544bad7c3518563869
+    - name: angry
+      pathPrefix: Characters/Alice
+      guid: 46aebe232687d1044a9c2e940e1aee9b
+    - name: sad
+      pathPrefix: Characters/Alice
+      guid: f2a03ea1be49ea943990757b30446fa1
+    - name: smile
+      pathPrefix: Characters/Alice
+      guid: 4579c026be8417f45a998380d9c27f1b
   - Id: Audio
     Resources:
     - name: Boop
       pathPrefix: Audio
       guid: 19c66a4c23ff0414bb6fef5451653d0a
+  - Id: Characters/bb2a0d33-fa56-4fd7-974e-bc9eb9b8d0ad
+    Resources:
+    - name: club4
+      pathPrefix: Characters/Club4
+      guid: b5c73210bf998264092e9083f006fe26
+  - Id: Characters/a329088c-b870-4dcb-9385-d3eb05e7402f
+    Resources:
+    - name: Hatter
+      pathPrefix: Characters/MH
+      guid: 897c449703ebe85458ea371001e9cf90
+  - Id: Characters/715a3bcf-fec8-44c8-9ec6-c19845d34047
+    Resources:
+    - name: normal
+      pathPrefix: Characters/March
+      guid: c49d2b71e64dced4199ade6a4a7ca952
+    - name: serious
+      pathPrefix: Characters/March
+      guid: a898e5e37fa81f642959c613947a586c
+    - name: smile
+      pathPrefix: Characters/March
+      guid: 3b652302471cd50438de6eec680a70e2
+  - Id: Characters/8432704a-8ffe-40db-a296-96c737c340d2
+    Resources:
+    - name: 1
+      pathPrefix: Characters/Violet
+      guid: c2323e20916b3d14da0b51fb83fa7d09
+  - Id: Characters/a7419def-c6de-4bac-b818-ba235237c1f3
+    Resources:
+    - name: Ash
+      pathPrefix: Characters/Ash
+      guid: 01c95e8c1a3cf634c9d114b3019476bd
+  - Id: Characters/575dd55a-d0fe-4b64-9797-f70e69e168e7
+    Resources:
+    - name: anonymous
+      pathPrefix: Characters/Anony
+      guid: 7c720814b17c36a49b2bda8b14c2ac90
+  - Id: Characters/cc09a412-d54c-4dc1-8fc5-0e38bd6e96bc
+    Resources:
+    - name: Ermerald
+      pathPrefix: Characters/Emerald
+      guid: d383f1406ce722a4ab07533c63555490
