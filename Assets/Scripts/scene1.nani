@@ -1,12 +1,12 @@
 @back street
 Alice and the White Rabbit strolled down the bustling street of a city where humans and animals coexisted harmoniously. Suddenly, a distant male chorus captured their attention.
+@bgm soldierH fade:3 volume:0.5 loop:true
 ♪ In her presence, there is no 'wonder' ♪
 @char Alice  pos:15,-6 scale:0.8,0.8,0.8 look:Right
 Alice: You hear that? The song... it's about me!
 @char WR pos:85,-10 look:Right
 WR: You're no celebrity. Don't get ahead of yourself.
 Alice: But it's singing, " In her presence, there is no 'wonder' "...
-
 They continue walking as the song becomes clearer, and a hint of burnt smell fills the air.
 They reach the city square, where a group of anthropomorphic creatures performs the song.
 Alice: See, it's me they're singing about!
@@ -14,7 +14,9 @@ WR: (dismissive)...
 As they navigate through a narrow alley, the scent of burnt offerings intensifies.
 Alice: Do you smell that? Something's burning.
 WR: Indeed. Let's investigate.
+@stopBgm soldierH fade:2
 They follow the scent, discovering a square which was full of people, and a plume of smoke rose from the center.
+@bgm soldierF fade:3 volume:0.5 loop:true
 
 @back str2
 They encountered the poker soldiers who was singing while burning books, an order issued by the Queen of Hearts
@@ -37,12 +39,16 @@ Alice: Who cares?
 Club4: I think you don't want to live anymore (draw the sword, closing in)
 Alice step back
 @hide Club4
-;change scene to alley
-Just then, someone bumped into Alice from the side. She was bumped flying into the air, and then feeling herself being lifted by someone.
+@stopBgm soldierF  
 
+@back Alley
+@bgm run volume:0.5 loop:false
+Just then, someone bumped into Alice from the side. She was bumped flying into the air, and then feeling herself being lifted by someone.
 Alice felt herself being carried away by someone into an alley. After a bumpy ride...
 @char Anony 
+@stopBgm run fade:1
 Anony: Phew, it should be safe here.
+@bgm main fade:3 volume:0.5 loop:true
 @char Alice.angry  pos:15,-6 scale:0.8,0.8,0.8 look:Right
 Alice: It's painful! Let me down!
 Alice looked up and saw a pair of long ears vaguely.
@@ -68,18 +74,19 @@ Alice: ...(thinking)
 @char Alice.smile  pos:15,-6 scale:0.8,0.8,0.8 look:Right
 Alice: Alright, then I'll go take a look.
 March: That's the spirit! Let's go!
-
 @char Alice.angry  pos:15,-6 scale:0.8,0.8,0.8 look:Right
 Alice: Hey, wait... wait for me... Where are you taking me anyway?
 March: Hurry up, we're almost there!
+@stopBgm main fade:1 
 After entering through the back door of a building, we walked down a corridor for a while, then passed through the inside of a counter and entered a small room.
-;add a opendoor sound effect and change background
+@bgm door loop:false volume:0.5
+@back Enter
+@bgm main fade:3 loop:true volume:0.5
 @char March.serious 
 March: This is it. To avoid being discovered by the playing card soldiers, be aware that there are mechanisms here.
 ;端茶interaction
 The inner wall of the fireplace suddenly part to the sides, like an elevator door.
 March: What are you waiting for? Hurry up! This door will automatically close in thirty seconds.
-;background alley again
 @char Alice.confuse  pos:15,-6 scale:0.8,0.8,0.8 look:Right
 Alice: I've been pondering that question, 'Why is a raven like a writing desk?' Do you have any idea?
 March: No, it's not something my brain can come up with.
@@ -87,11 +94,13 @@ Alice: Yeah, I can't believe I'm asking you. I must be a fool.
 March: Well, you've already known that I don't have any answers, haven't you? Quite the detective move! But why are you the foolish one?
 Alice: ......
 
+@back Alley
+@bgm listenlove loop:true volume:0.5 fade:3
 Alice and the March Hare continued walking in the alley when suddenly they heard two familiar voices coming from around the corner. 
 They stealthily approached.
 @char March pose:ls look:Right
 @char Emerald pose:norm scale:1.2,1.2,1.2
-@char Violet  pose:norm scale:0.7,0.7,0.7
+@char Violet  pose:norm 
 Emerald: Have you thought about the matter we discussed earlier?
 Violet: Hmm... but I still...
 Emerald: Still going to choose that pretentious guy with the glasses?
@@ -104,27 +113,49 @@ March: Wow, a love triangle!
 Alice: Shh, be careful not to be overheard. Let's leave.
 @hide Emerald 
 @hide Violet
+@stopBgm listenlove fade:1
 ;change to alley background
-@char March pose:norm look:Left
+@char March.serious pose:ls look:Right
 Alice and the March Hare navigated through the alley when they suddenly encountered the playing card soldiers coming to capture them.
-Clube5: Found them! They are here!
-Clube6: CATCH THEM!!
+@bgm run2 loop:true volume:0.5 fade:3
+@char Club5 scale:1.8,1.8,1.8 pose:norm look:Left
+@char Club6 scale:1.8,1.8,1.8 pose:norm look:Left
+Club5: Found them! They are here!
+Club6: CATCH THEM!!
 @save
 #HideInteract
-;Near the bunker change background
+@back bunker1
+March: We need to find a hiding spot quickly; the poke soldiers are getting closer.
 ;hide club5 club6 
-@choice "LeftBox" goto:.NoCaught
-@choice "RightBox" goto:.Caught
-@choice "MiddleBox" goto:.Caught
+@choice "hiding in an overturned empty apple box" goto:.Caught
+@choice "hiding in a sand pit, with apples covering on top for camouflage" goto:.NoCaught
 @stop
 
 #Caught
+@stopBgm run2 fade:1
+@bgm caught volume:0.5 loop:false
+Club5: Where are they?
+Club6: Why are there so many apples here?
+Club5: Could they be hiding under this wooden box?
+The next moment, the wooden box is lifted.
 ;show a background being Caught
+You are caught by the playing card soldiers, and upon learning of your opposition to her, the Queen of Hearts becomes furious. She orders you to be imprisoned for life.
 @goto .HideInteract
 
 #NoCaught
+Club5: Where are they?
+Club6: Why are there so many apples here?
+Club5: Could they be hiding under this wooden box?
+The next moment, the wooden box is lifted.
+Club5: It's empty!
+Club6: Maybe the wooden box was knocked over during the escape. It seems like we don't need to waste time here. Let's search elsewhere.
+@stopBgm run2 fade:1
+@hide Club5
+@hide Club6
 March: Oh my god, they are so close... Anyway, we are safe now...
+
 @back str2 
+@char March.serious pose:norm look:Left
 Alice: Where do we go next?
 March: Hmm... let's see... Huh? Wait a minute... Where's my pocket watch?!
 Alice: What happened?
@@ -132,7 +163,29 @@ March: My pocket watch... it seems I left it at the club... Alice, I need to go 
 Alice: It's too dangerous to go back!
 March: You don't understand the importance of this pocket watch to me at all! Without it, I'll be restless day and night!
 Alice: Okay
-; room background 把手血迹
+@goto .Teacup
+@save
+@stop
+
+#LeftTeacup
+Filled with rich red tea, not a wisp of steam in sight, it seems to have gone cold. There are bloodstains on the handle of the teacup.
+@goto .Teacup
+@stop
+
+#RightTeacup
+Filled with rich red tea, not a wisp of steam in sight, it seems to have gone cold. There are bloodstains on the handle of the teacup.
+@goto .Teacup
+@stop
+
+
+; room background 把手血迹 interaction
+#Teacup
+@choice  "Left Teacup" goto:.LeftTeacup
+@choice  "Right Teacup" goto:.RightTeacup
+@choice  "continue" 
+@stop
+
+The door opens when both teacups are lifted.
 Alice: Emm?
 March: What's wrong?
 Alice: There are red stains on both of the cups... I have a bad feeling about this.
@@ -143,6 +196,178 @@ Alice: ... He's already dead.
 March: Now, what should we do?
 Alice: We can't call the poke soldier... In that case, we have to find the murderer ourselves...
 Alice: The fact that the murderer knows about this secret room means they must be a member of this club. The March Hare and I have been together since the tea club ended, so the murderer can only be one of the remaining three people: Ash, Violet, or Emerald.
+
+@hide March
+Alice: Clues should be hidden in the death information left by the Mad Hatter.
+Alice is investigating the room.... [wait {Random(3,8)}]
+Alice: Investigation complete. I know who the murderer is.
+@char March.serious pose:norm look:Left 
+March: who?
+Alice: Let's start with the bloodstain on the cup at the entrance.
+@save
+
+# BloodReason
+The reason there's blood on the cup is:
+@choice "The killer came back after leaving once." goto:.OptionA
+@choice "The killer touched the cup while leaving." goto:.OptionB
+@stop
+
+#OptionB
+March: But the killer is someone from the tea party. They'd know there's no need to touch the cup's mechanism when leaving. That doesn't make sense.
+Alice: That's true, then if this is the case, the reason there's blood on the cup is...
+@goto .BloodReason
+@stop
+
+#OptionA
+March: Are you suggesting the killer returned to the scene of the murder?
+Alice: Exactly, and this hypothesis aligns with another clue I found at the scene!
+
+@choice "The victim had dormouse fur in two places." goto:.OptionA1
+@choice "Both of the victim's wrists had bloodstains; one was dry, the other wasn't." goto:.OptionB1
+@stop
+
+#OptionA1
+March: But what does the dormouse have to do with the killer returning twice?
+
+Alice: Because the killer remembered the dormouse sneaking into the Mad Hatter's pocket during the tea party. Worried the dormouse might have overheard the crime, the killer decided to return and eliminate it. But upon returning, they found the Mad Hatter wasn't dead.
+
+March: How is that possible?!
+
+Alice: Thanks to the dormouse. The Mad Hatter said it curls up when it sleeps, right? [wait i]The same happened in his pocket. After the killer struck the Mad Hatter with a fire poker, the Mad Hatter's pocket dormouse was flung out, rolling under his left armpit. The killer, after repeatedly hitting the Mad Hatter's head, tried to check his pulse to confirm his death.
+
+Alice: Unexpectedly, the Mad Hatter, in a dazed state, clutched the dormouse under his armpit tightly. Pinching something under the armpit can block blood supply to the limb, temporarily stopping the pulse.[wait i] You can imagine how uncomfortable the dormouse was, but the Mad Hatter was also hanging by a thread. In the end, the Mad Hatter successfully deceived the killer into believing he was dead, so the killer left the crime scene.
+
+Alice: The story that followed is as I previously mentioned—the killer returned to kill the dormouse but found the Mad Hatter alive, so they killed him again. They checked the pulse on the other wrist to confirm his death, explaining why there were bloodstains on both wrists, one dry and the other not.
+@goto .continue1
+@stop
+
+#OptionB1
+Alice: That's right. The victim's two wrists both had bloodstains—one was dry, while the other wasn't.[wait i] This suggests the killer made a mistake when checking the pulse on his left wrist and mistakenly believed the Mad Hatter was already dead, so they left the locked room. Later, for some reason, the killer returned to the scene and found the Mad Hatter still alive, so they struck again to ensure his death, then checked the pulse on the right wrist to confirm it.
+
+March: I see, that makes sense. You truly are a great detective. But why would the killer make a mistake when checking the pulse?
+
+#reasonwho
+@choice "Because the Mad Hatter's left pulse is naturally weak and hard to detect." goto:.OptionA2
+@choice "Because of the dormouse." goto:.OptionB2
+@stop 
+
+#OptionA2
+Alice: Because the Mad Hatter's left pulse is naturally weak and hard to detect.
+March: That explanation seems a bit far-fetched…
+Alice: Indeed, let's think about it again.
+@goto .reasonwho
+@stop
+
+#OptionB2
+Alice: Because of the dormouse. [wait i] Didn't the Mad Hatter mention that dormice curl up into a ball when they sleep? [wait i]The same happened in the Mad Hatter's pocket. After the killer struck down the Mad Hatter with a fire poker, the dormouse in the Mad Hatter's pocket was flung out, rolling under his left armpit. The killer, after repeatedly striking the Mad Hatter's head, tried to check his left wrist pulse to confirm his death.
+
+Alice: At that moment, the Mad Hatter gambled with his life! [wait i] In a dazed state, he tightly clutched the balled-up dormouse under his left armpit. Pinching something under the armpit can block blood supply to the limb, temporarily stopping the pulse. One can imagine how uncomfortable the dormouse was, but the Mad Hatter was also hanging by a thread.[wait i] In the end, the Mad Hatter successfully deceived the killer, leading them to believe he was dead, so they left the crime scene.
+
+Alice: After the killer left, the Mad Hatter released the dormouse from under his armpit and used the butter knife that had fallen to the ground to leave a dying message.[wait i] But then the killer returned. Remembering the dormouse sneaking into the Mad Hatter's pocket during the tea party, the killer was worried the dormouse might have overheard their crime, so they decided to return and eliminate it. [wait i] However, they found the Mad Hatter still alive, so the killer struck him with the fire poker for the final time. After confirming his death by checking the pulse on the Mad Hatter's right wrist, the killer also eliminated the dormouse, which was lying on the rug.
+
+#continue1
+March: If that's the case, then who is the killer?
+Alice: The killer's identity is hidden within this dying message!
+March: But why are the dying messages "RAVEN" and "DESK"?
+Alice: Because the killer tampered with the dying message. The evidence is...
+
+#reason2
+@choice "The bloodstain on the carpet." goto:.OptionA3
+@choice "The butter knife in the Mad Hatter's hand." goto:.OptionB3
+@stop
+
+#OptionB3
+March Hare: But there doesn't seem to be any suspicious marks or distinctive evidence on the butter knife...
+Alice: That makes sense... Let's reconsider the available evidence... 
+@goto .reason2
+
+#OptionA3
+Alice: Yes, the bloodstain on the carpet is the evidence. After killing, the killer realized the Mad Hatter had left a message accusing the killer, not written in blood but etched directly into the floor, so it couldn't be wiped away. After much thought, the killer realized that by adding a few letters to this dying message, it would turn into today's riddle of RAVEN and DESK.
+
+Alice: Thus, the killer moved the entire carpet to make room for the new letters, ultimately creating the scene where the two carpets are about fifty centimeters apart. Since the floor was spotless to begin with, we naturally couldn't determine the original position of the red carpet.
+
+Alice: However, the killer overlooked one detail: the blood-soaked front end of the hat had left a mark on the red carpet. The hat is black, the carpet red; even if the bloodstain is now tea-colored and very inconspicuous, let alone its original red state, the killer definitely wouldn't have noticed. From this, we can deduce the original position of the red carpet, where the top R and D letters couldn't be added because the red carpet covered them. That's why the killer moved the carpet.
+
+Alice: A dying victim wouldn't move the carpet under the dining table. Since the carpet was moved, it indicates the dying message was fabricated by the killer afterward.
+
+Alice: After moving the carpet back to its original position, the dying message becomes this ...
+; need a message picture 
+
+# murderer
+@char Alice.angry  pos:15,-6 scale:0.8,0.8,0.8 look:Right
+Alice: There's nothing in front of me that can't be explained! The killer is.
+@choice "Violet Smith" goto:.Violet
+@choice "Emerald Kidman" goto:.Emerald
+@choice "Ash English" goto:.Ash
+@stop
+
+#Emerald
+;background change
+Alice and March Hare visit the suspect's house.
+Alice: You killed the Mad Hatter, didn't you?
+@char March.serious pose:LS look:Right
+@char Emerald pose:norm scale:1.2,1.2,1.2
+Emerald: What are you talking about? The Mad Hatter is dead?
+Alice: Admit it. The dying messages, 'RAVEN' and 'DESK', the killer moved the rug to make the Mad Hatter's hat brim leave a bloodstain on the rug. Restoring the rug, the letters left were 'AVEN' and 'ESK', among which EK are your initials! You added a few letters after coming back and discovering the Mad Hatter's dying message, turning it into "RAVEN" and "DESK."
+Emerald: But look, the second line has the letters 'A' and 'E', isn't that Ash English's initials? And the third line, 'V' and 'S', isn't that Violet Smith's initials? You can't just accuse me based on this alone...
+Alice: What?!!Damn... Is this where I fail... I need to reconsider who the murderer might be....
+@hide Emerald
+@goto .murderer
+
+#Ash
+;background change
+Alice and March Hare visit the suspect's house.
+Alice: You killed the Mad Hatter, didn't you?
+@char March.serious pose:LS look:Right
+@char Ash pose:norm 
+Ash: What are you talking about? The Mad Hatter is dead?
+Alice: Admit it. The dying messages, 'RAVEN' and 'DESK', the killer moved the rug to make the Mad Hatter's hat brim leave a bloodstain on the rug. Restoring the rug, the letters left were 'AVEN' and 'ESK', among which AE are your initials! You added a few letters after coming back and discovering the Mad Hatter's dying message, turning it into "RAVEN" and "DESK."
+Ash: But look, the fourth line has the letters 'E' and 'K', isn't that Emerald Kidman 's initials? And the third line, 'V' and 'S', isn't that Violet Smith's initials? You can't just accuse me based on this alone...
+Alice: What?!!Damn... Is this where I fail... I need to reconsider who the murderer might be....
+@hide Ash
+@goto .murderer
+
+
+
+#Violet
+;background change
+Alice and March Hare visit the suspect's house.
+Alice: You killed the Mad Hatter, didn't you?
+@char Violet  pose:norm 
+Violet: ...
+Alice: Admit it. The dying messages, 'RAVEN' and 'DESK', the killer moved the rug to make the Mad Hatter's hat brim leave a bloodstain on the rug. Restoring the rug, the letters left were 'AVEN' and 'ESK', among which VS are your initials! You added a few letters after coming back and discovering the Mad Hatter's dying message, turning it into "RAVEN" and "DESK."
+Violet: But look, the second line has the letters 'A' and 'E', isn't that Ash English's initials? And the fourth line, 'E' and 'K', isn't that Emerald Kidman's initials? You can't just accuse me based on this alone...
+Alice: There must be another loophole… Right!...
+
+@choice "There must be more evidence!" goto:.OptionA4
+@choice "The other two had no reason to alter the dying message in this way." goto:.OptionB4
+@stop
+
+#OptionA4
+Violet: Then go ahead and search for solid evidence. Until you find conclusive proof, I won't admit to anything.
+Alice: I should have all the evidence needed... What did I miss...!! I got it! 
+@choice "The other two had no reason to alter the dying message in this way."
+
+#OptionB4
+Alice: Because the other two had no reason to alter the dying message like this! The words indeed contain everyone's initials. The second line is 'A E', the third is 'V S', the fourth is 'E K'. But if you look closely, you'll realize that by adding an R to the left of 'A E', a V in the middle, and an N on the right, it becomes RAVEN. The same goes for 'E K', add a D on the left and an S in the middle to form 'DESK'.
+;A diagram is suggested here for clarification.
+
+Alice: Therefore, if the killer was 'A E' or 'E K', they could have simply altered their initials into RAVEN and DESK horizontally. But the one who had to write English letters vertically, and also had to move the rug along with the dining table to create enough space, could only have been Violet Smith.
+
+Violet: ...[wait i] Yes, it was me who killed him.
+Alice: But why did you do that?
+Violet: I love Ash, but he insisted on participating in this dangerous fika. Once the Queen finds out, we'll all be doomed. I've tried to convince him many times, but he wouldn't listen. He told me that solving mysteries is the purpose of his life. That's why I wanted to make this club disappear completely.
+Alice: I see. So that's why you suggested suspending activities today?
+Violet: Yes. But, as you saw, no one agreed. So, I had to take measures.
+Violet: I thought if I killed the Mad Hatter, the tea club would disband, and he could come back...
+
+@back Black
+@hide Alice
+@hide March
+@hide Violet
+The case is solved; Violet confessed. However, we will never know "Why is a raven like a writing desk?" 
+The one who posed the question is gone, and we will never discover the correct answer.
+
 
 
 @stop

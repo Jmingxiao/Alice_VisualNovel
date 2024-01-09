@@ -67,13 +67,15 @@ MonoBehaviour:
     ids:
     - WR
     - Alice
-    - Club4
     - Hatter
     - March
     - Violet
     - Ash
     - Emerald
     - Anony
+    - Club4
+    - Club5
+    - Club6
     metas:
     - Implementation: Naninovel.SpriteCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
@@ -103,8 +105,8 @@ MonoBehaviour:
       BakedLookDirection: 1
       DisplayName: White Rabbit
       UseCharacterColor: 1
-      NameColor: {r: 0.7581996, g: 0.61006284, b: 1, a: 1}
-      MessageColor: {r: 0.6477987, g: 0.94760084, b: 0.9716981, a: 1}
+      NameColor: {r: 0.990566, g: 0.96956867, b: 0.82858664, a: 1}
+      MessageColor: {r: 0.9716981, g: 0.9696733, b: 0.8036371, a: 1}
       HighlightWhenSpeaking: 0
       HighlightCharacterCount: 0
       SpeakingPose: 
@@ -179,48 +181,6 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      guid: bb2a0d33-fa56-4fd7-974e-bc9eb9b8d0ad
-      customData:
-        rid: -2
-      Pivot: {x: 0.5, y: 0}
-      PixelsPerUnit: 100
-      EnableDepthPass: 1
-      DepthAlphaCutoff: 0.5
-      CustomTextureShader: {fileID: 0}
-      CustomSpriteShader: {fileID: 0}
-      RenderTexture: {fileID: 0}
-      RenderRectangle:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1
-        height: 1
-      BakedLookDirection: 1
-      DisplayName: Club4 Soldier
-      UseCharacterColor: 1
-      NameColor: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
-      MessageColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
-      HighlightWhenSpeaking: 0
-      HighlightCharacterCount: 0
-      SpeakingPose: 
-      NotSpeakingPose: 
-      PlaceOnTop: 1
-      HighlightDuration: 0.35
-      HighlightEasing: 1
-      MessageSound: 
-      MessageSoundPlayback: 0
-      VoiceSource: {fileID: 0}
-      LinkedPrinter: 
-      Poses: []
-    - Implementation: Naninovel.SpriteCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      Loader:
-        PathPrefix: Characters
-        ProviderTypes:
-        - Naninovel.AddressableResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
       guid: a329088c-b870-4dcb-9385-d3eb05e7402f
       customData:
         rid: -2
@@ -281,9 +241,9 @@ MonoBehaviour:
         height: 1
       BakedLookDirection: 1
       DisplayName: March Hare
-      UseCharacterColor: 0
-      NameColor: {r: 1, g: 1, b: 1, a: 1}
-      MessageColor: {r: 1, g: 1, b: 1, a: 1}
+      UseCharacterColor: 1
+      NameColor: {r: 0.6320754, g: 0.5833337, b: 0.45716143, a: 1}
+      MessageColor: {r: 1, g: 0.7772536, b: 0.68553454, a: 1}
       HighlightWhenSpeaking: 0
       HighlightCharacterCount: 0
       SpeakingPose: 
@@ -345,9 +305,9 @@ MonoBehaviour:
         height: 1
       BakedLookDirection: 1
       DisplayName: Violet Smith
-      UseCharacterColor: 0
-      NameColor: {r: 1, g: 1, b: 1, a: 1}
-      MessageColor: {r: 1, g: 1, b: 1, a: 1}
+      UseCharacterColor: 1
+      NameColor: {r: 0.990566, g: 0.55758274, b: 0.93199736, a: 1}
+      MessageColor: {r: 0.8962264, g: 0.66512394, b: 0.66512394, a: 1}
       HighlightWhenSpeaking: 0
       HighlightCharacterCount: 0
       SpeakingPose: 
@@ -364,7 +324,7 @@ MonoBehaviour:
         actorState:
           appearance: 
           visible: 0
-          position: {x: 7.2959995, y: -5.4, z: 0}
+          position: {x: 7.2959995, y: -7.0200005, z: 0}
           rotation: {x: 0, y: 0, z: 0, w: 0}
           scale: {x: 0, y: 0, z: 0}
           tintColor: {r: 0, g: 0, b: 0, a: 0}
@@ -440,9 +400,9 @@ MonoBehaviour:
         height: 1
       BakedLookDirection: 1
       DisplayName: Ermerald Kidman
-      UseCharacterColor: 0
-      NameColor: {r: 1, g: 1, b: 1, a: 1}
-      MessageColor: {r: 1, g: 1, b: 1, a: 1}
+      UseCharacterColor: 1
+      NameColor: {r: 0.81597376, g: 0.9528302, b: 0.7610656, a: 1}
+      MessageColor: {r: 0.6561803, g: 0.7075472, b: 0.5651477, a: 1}
       HighlightWhenSpeaking: 0
       HighlightCharacterCount: 0
       SpeakingPose: 
@@ -459,7 +419,7 @@ MonoBehaviour:
         actorState:
           appearance: 
           visible: 0
-          position: {x: 3.8400002, y: -10.26, z: 0}
+          position: {x: 3.8400002, y: -8.760961, z: 0}
           rotation: {x: 0, y: 0, z: 0, w: 0}
           scale: {x: 0, y: 0, z: 0}
           tintColor: {r: 0, g: 0, b: 0, a: 0}
@@ -494,6 +454,90 @@ MonoBehaviour:
       BakedLookDirection: 2
       DisplayName: ???
       UseCharacterColor: 1
+      NameColor: {r: 0.4897947, g: 0.5351148, b: 0.6132076, a: 1}
+      MessageColor: {r: 0.502225, g: 0.63199824, b: 0.764151, a: 1}
+      HighlightWhenSpeaking: 0
+      HighlightCharacterCount: 0
+      SpeakingPose: 
+      NotSpeakingPose: 
+      PlaceOnTop: 1
+      HighlightDuration: 0.35
+      HighlightEasing: 1
+      MessageSound: 
+      MessageSoundPlayback: 0
+      VoiceSource: {fileID: 0}
+      LinkedPrinter: 
+      Poses: []
+    - Implementation: Naninovel.SpriteCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      Loader:
+        PathPrefix: Characters
+        ProviderTypes:
+        - Naninovel.AddressableResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      guid: bb2a0d33-fa56-4fd7-974e-bc9eb9b8d0ad
+      customData:
+        rid: -2
+      Pivot: {x: 0.5, y: 0}
+      PixelsPerUnit: 100
+      EnableDepthPass: 1
+      DepthAlphaCutoff: 0.5
+      CustomTextureShader: {fileID: 0}
+      CustomSpriteShader: {fileID: 0}
+      RenderTexture: {fileID: 0}
+      RenderRectangle:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1
+        height: 1
+      BakedLookDirection: 1
+      DisplayName: Card Soldier
+      UseCharacterColor: 1
+      NameColor: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 1}
+      MessageColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
+      HighlightWhenSpeaking: 0
+      HighlightCharacterCount: 0
+      SpeakingPose: 
+      NotSpeakingPose: 
+      PlaceOnTop: 1
+      HighlightDuration: 0.35
+      HighlightEasing: 1
+      MessageSound: 
+      MessageSoundPlayback: 0
+      VoiceSource: {fileID: 0}
+      LinkedPrinter: 
+      Poses: []
+    - Implementation: Naninovel.SpriteCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      Loader:
+        PathPrefix: Characters
+        ProviderTypes:
+        - Naninovel.AddressableResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      guid: 331cc027-2f46-4f23-a382-2b0c377c842c
+      customData:
+        rid: -2
+      Pivot: {x: 0.5, y: 0}
+      PixelsPerUnit: 100
+      EnableDepthPass: 1
+      DepthAlphaCutoff: 0.5
+      CustomTextureShader: {fileID: 0}
+      CustomSpriteShader: {fileID: 0}
+      RenderTexture: {fileID: 0}
+      RenderRectangle:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1
+        height: 1
+      BakedLookDirection: 1
+      DisplayName: Spade 5
+      UseCharacterColor: 0
       NameColor: {r: 1, g: 1, b: 1, a: 1}
       MessageColor: {r: 1, g: 1, b: 1, a: 1}
       HighlightWhenSpeaking: 0
@@ -507,7 +551,72 @@ MonoBehaviour:
       MessageSoundPlayback: 0
       VoiceSource: {fileID: 0}
       LinkedPrinter: 
-      Poses: []
+      Poses:
+      - name: norm
+        actorState:
+          appearance: 
+          visible: 0
+          position: {x: 7.2959995, y: -5.4, z: 0}
+          rotation: {x: 0, y: 0, z: 0, w: 0}
+          scale: {x: 0, y: 0, z: 0}
+          tintColor: {r: 0, g: 0, b: 0, a: 0}
+          lookDirection: 0
+        overriddenProperties:
+        - position
+    - Implementation: Naninovel.SpriteCharacter, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      Loader:
+        PathPrefix: Characters
+        ProviderTypes:
+        - Naninovel.AddressableResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+        - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
+          Culture=neutral, PublicKeyToken=null
+      guid: 9fc36357-dbb9-4f2d-8ab7-bda184cc02ca
+      customData:
+        rid: -2
+      Pivot: {x: 0.5, y: 0}
+      PixelsPerUnit: 100
+      EnableDepthPass: 1
+      DepthAlphaCutoff: 0.5
+      CustomTextureShader: {fileID: 0}
+      CustomSpriteShader: {fileID: 0}
+      RenderTexture: {fileID: 0}
+      RenderRectangle:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1
+        height: 1
+      BakedLookDirection: 1
+      DisplayName: Spade 6
+      UseCharacterColor: 0
+      NameColor: {r: 1, g: 1, b: 1, a: 1}
+      MessageColor: {r: 1, g: 1, b: 1, a: 1}
+      HighlightWhenSpeaking: 0
+      HighlightCharacterCount: 0
+      SpeakingPose: 
+      NotSpeakingPose: 
+      PlaceOnTop: 1
+      HighlightDuration: 0.35
+      HighlightEasing: 1
+      MessageSound: 
+      MessageSoundPlayback: 0
+      VoiceSource: {fileID: 0}
+      LinkedPrinter: 
+      Poses:
+      - name: norm
+        actorState:
+          appearance: 
+          visible: 0
+          position: {x: 5.76, y: -5.4, z: 0}
+          rotation: {x: 0, y: 0, z: 0, w: 0}
+          scale: {x: 0, y: 0, z: 0}
+          tintColor: {r: 0, g: 0, b: 0, a: 0}
+          lookDirection: 1
+        overriddenProperties:
+        - position
+        - lookDirection
   AvatarLoader:
     PathPrefix: CharacterAvatars
     ProviderTypes:
